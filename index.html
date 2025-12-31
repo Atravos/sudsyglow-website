@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SudsyGlow | Handcrafted Japanese Artisan Soaps & Shampoos</title>
+    <meta name="description" content="Premium artisan soaps and shampoos handcrafted in Tokyo, Japan. Natural ingredients, traditional methods, authentic Japanese craftsmanship.">
+    
+    <!-- Favicon (add your favicon files) -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo" onclick="showPage('home')">SUDSY<span>GLOW</span></div>
+            <nav>
+                <a onclick="showPage('home')">Home</a>
+                <a onclick="showPage('shop')">Shop</a>
+                <a onclick="showPage('about')">Our Story</a>
+                <a onclick="showPage('contact')">Contact</a>
+            </nav>
+            <div class="header-icons">
+                <div class="header-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </div>
+                <div class="header-icon" onclick="toggleCart()">
+                    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         HOME PAGE
+         ========================================== -->
+    <div id="home" class="page active">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <svg class="hero-pattern" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+            </svg>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Handcrafted in Tokyo, Japan
+                    </div>
+                    <h1>Artisan Soaps &<br><em>Natural Beauty</em></h1>
+                    <p class="hero-text">Experience the pure essence of Japanese craftsmanship. Each bar is handmade using traditional methods and the finest natural ingredients, bringing centuries of beauty wisdom to your daily ritual.</p>
+                    <div class="hero-btns">
+                        <a class="btn btn-primary" onclick="showPage('shop')">
+                            Shop Collection
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a class="btn btn-secondary" onclick="showPage('about')">Our Story</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-main">
+                        <div class="product-preview">
+                            <div class="product-preview-bottle">
+                                <span class="product-preview-label">SudsyGlow</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-floating hero-floating-1">
+                        <div class="floating-content">
+                            <div class="floating-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="floating-text">
+                                <strong>100% Natural</strong>
+                                <span>Pure ingredients</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-floating hero-floating-2">
+                        <div class="floating-content">
+                            <div class="floating-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            </div>
+                            <div class="floating-text">
+                                <strong>72 Hour Cure</strong>
+                                <span>Traditional method</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <section class="trust-bar">
+            <div class="trust-container">
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <span>Free shipping over $75</span>
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span>All natural ingredients</span>
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+                    <span>Cruelty-free & vegan</span>
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Made in Japan</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured">
+            <div class="section-header">
+                <p class="section-subtitle">Curated Selection</p>
+                <h2 class="section-title">Bestselling Products</h2>
+                <p class="section-desc">Discover our most loved formulations, crafted with care using traditional Japanese methods.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <span class="product-tag">Bestseller</span>
+                        <div class="product-bottle"></div>
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('Sakura Blossom Shampoo', 38)">Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Shampoo</p>
+                        <h3 class="product-name">Sakura Blossom</h3>
+                        <p class="product-desc">Cherry blossom & rice water</p>
+                        <p class="product-price">$38.00</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <div class="product-bottle bar"></div>
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('Hinoki Forest Soap', 24)">Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Body Bar</p>
+                        <h3 class="product-name">Hinoki Forest</h3>
+                        <p class="product-desc">Japanese cypress & green tea</p>
+                        <p class="product-price">$24.00</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <span class="product-tag">New</span>
+                        <div class="product-bottle"></div>
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('Yuzu Citrus Shampoo', 42)">Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Shampoo</p>
+                        <h3 class="product-name">Yuzu Citrus</h3>
+                        <p class="product-desc">Yuzu extract & vitamin E</p>
+                        <p class="product-price">$42.00</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <div class="product-bottle bar"></div>
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('Matcha Purify Soap', 26)">Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Body Bar</p>
+                        <h3 class="product-name">Matcha Purify</h3>
+                        <p class="product-desc">Ceremonial matcha & charcoal</p>
+                        <p class="product-price">$26.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="story">
+            <div class="story-container">
+                <div class="story-images">
+                    <div class="story-image">
+                        <div class="story-image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                            <span>Tokyo Workshop</span>
+                        </div>
+                    </div>
+                    <div class="story-image">
+                        <div class="story-image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                            <span>Natural Ingredients</span>
+                        </div>
+                    </div>
+                    <div class="story-image">
+                        <div class="story-image-placeholder">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                            <span>Handcrafting Process</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <h2>Rooted in <em>Japanese</em> Tradition</h2>
+                    <p class="story-text">In our Tokyo workshop, we blend centuries-old soap-making traditions with modern skincare science. Every bar and bottle represents our commitment to purity, quality, and the art of Japanese craftsmanship.</p>
+                    <p class="story-text">We source the finest ingredients from across Japan — from Uji matcha to Hokkaido lavender — ensuring each product delivers an authentic experience of Japanese beauty.</p>
+                    <div class="story-features">
+                        <div class="story-feature">
+                            <div class="story-feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
+                            <div>
+                                <h4>Small Batch</h4>
+                                <p>Crafted in limited quantities</p>
+                            </div>
+                        </div>
+                        <div class="story-feature">
+                            <div class="story-feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Pure Formula</h4>
+                                <p>No synthetic additives</p>
+                            </div>
+                        </div>
+                        <div class="story-feature">
+                            <div class="story-feature-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+                            </div>
+                            <div>
+                                <h4>Eco-Friendly</h4>
+                                <p>Sustainable packaging</p>
+                            </div>
+                        </div>
+                        <div class="story-feature">
+                            <div class="story-feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </div>
+                            <div>
+                                <h4>Cruelty-Free</h4>
+                                <p>Never tested on animals</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-secondary" onclick="showPage('about')">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ingredients Banner -->
+        <section class="ingredients-banner">
+            <div class="ingredients-content">
+                <h2>Nature's Finest Ingredients</h2>
+                <p>Each product features carefully selected Japanese botanicals known for their skin-loving properties.</p>
+                <div class="ingredient-tags">
+                    <span class="ingredient-tag">Sakura Extract</span>
+                    <span class="ingredient-tag">Hinoki Oil</span>
+                    <span class="ingredient-tag">Uji Matcha</span>
+                    <span class="ingredient-tag">Yuzu</span>
+                    <span class="ingredient-tag">Rice Bran</span>
+                    <span class="ingredient-tag">Camellia Oil</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="section-header">
+                <p class="section-subtitle">Customer Love</p>
+                <h2 class="section-title">What People Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">The Sakura Blossom shampoo has completely transformed my hair. It's softer, shinier, and the scent is absolutely divine. Worth every penny!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <p class="testimonial-name">Emily Chen</p>
+                            <p class="testimonial-location">San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">Finally found a soap that doesn't dry out my sensitive skin. The Hinoki bar is gentle yet cleansing, and the forest scent is so calming.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <p class="testimonial-name">Yuki Tanaka</p>
+                            <p class="testimonial-location">Tokyo, Japan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">I ordered the gift set for my mom and she's obsessed. The packaging was beautiful and the quality is exceptional. Will definitely be ordering again!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <p class="testimonial-name">Sarah Mitchell</p>
+                            <p class="testimonial-location">New York, NY</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="newsletter-container">
+                <h2>Join the SudsyGlow Family</h2>
+                <p>Subscribe for exclusive offers, new product launches, and Japanese beauty tips delivered to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         SHOP PAGE
+         ========================================== -->
+    <div id="shop" class="page">
+        <section class="shop-hero">
+            <h1>Shop All Products</h1>
+            <p>Explore our complete collection of handcrafted Japanese soaps and shampoos.</p>
+        </section>
+        <section class="shop-filters">
+            <div class="filters-container">
+                <div class="filter-tabs">
+                    <button class="filter-tab active">All</button>
+                    <button class="filter-tab">Shampoos</button>
+                    <button class="filter-tab">Body Bars</button>
+                    <button class="filter-tab">Gift Sets</button>
+                </div>
+                <div class="filter-sort">
+                    <select>
+                        <option>Sort by: Featured</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <section class="shop-products">
+            <div class="products-grid">
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <span class="product-tag">Bestseller</span>
+                        <div class="product-bottle"></div>
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('Sakura Blossom Shampoo', 38)">Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Shampoo</p>
+                        <h3 class="product-name">Sakura Blossom</h3>
+                        <p class="product-desc">Cherry blossom & rice water</p>
+                        <p class="product-price">$38.00</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <div class="product-bottle bar"></div>
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('Hinoki Forest Soap', 24)">Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Body Bar</p>
+                        <h3 class="product-name">Hinoki Forest</h3>
+                        <p class="product-desc">Japanese cypress & green tea</p>
+                        <p class="product-price">$24.00</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <span class="product-tag">New</span>
+                        <div class="product-bottle"></div>
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('Yuzu Citrus Shampoo', 42)">Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Shampoo</p>
+                        <h3 class="product-name">Yuzu Citrus</h3>
+                        <p class="product-desc">Yuzu extract & vitamin E</p>
+                        <p class="product-price">$42.00</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <div class="product-bottle bar"></div>
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('Matcha Purify Soap', 26)">Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Body Bar</p>
+                        <h3 class="product-name">Matcha Purify</h3>
+                        <p class="product-desc">Ceremonial matcha & charcoal</p>
+                        <p class="product-price">$26.00</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <div class="product-bottle"></div>
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('Rice Water Repair Shampoo', 40)">Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Shampoo</p>
+                        <h3 class="product-name">Rice Water Repair</h3>
+                        <p class="product-desc">Fermented rice & amino acids</p>
+                        <p class="product-price">$40.00</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <div class="product-bottle bar"></div>
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('Bamboo Charcoal Detox Soap', 28)">Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Body Bar</p>
+                        <h3 class="product-name">Bamboo Charcoal Detox</h3>
+                        <p class="product-desc">Activated charcoal & tea tree</p>
+                        <p class="product-price">$28.00</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <div class="product-bottle"></div>
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('Camellia Silk Shampoo', 44)">Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Shampoo</p>
+                        <h3 class="product-name">Camellia Silk</h3>
+                        <p class="product-desc">Tsubaki oil & silk proteins</p>
+                        <p class="product-price">$44.00</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <span class="product-tag">Gift Set</span>
+                        <div class="product-bottle bar"></div>
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('Onsen Mineral Gift Set', 85)">Quick Add</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Gift Set</p>
+                        <h3 class="product-name">Onsen Mineral Collection</h3>
+                        <p class="product-desc">3-piece hot spring inspired set</p>
+                        <p class="product-price">$85.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="load-more">
+                <button class="btn btn-secondary">Load More Products</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         ABOUT PAGE
+         ========================================== -->
+    <div id="about" class="page">
+        <section class="about-hero">
+            <div class="about-hero-content">
+                <h1>Our <em>Story</em></h1>
+                <p>Born from a passion for Japanese beauty traditions and a commitment to natural ingredients, SudsyGlow brings the art of artisan soap-making to the world.</p>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="story-image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        <span>Our Tokyo Workshop</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2>Crafted with Purpose</h2>
+                    <p>In the heart of Tokyo, our small team of artisans creates each product by hand, using techniques passed down through generations. We believe that the best skincare comes from nature, crafted with intention and care.</p>
+                    <p>Our journey began with a simple question: why do most commercial soaps strip our skin of its natural oils? The answer led us to traditional Japanese soap-making methods that cleanse gently while nourishing deeply.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-grid reverse">
+                <div class="about-image">
+                    <div class="story-image-placeholder">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                        <span>Natural Ingredients</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2>Japanese Ingredients</h2>
+                    <p>We source the finest ingredients from across Japan — Uji matcha from Kyoto, hinoki oil from ancient forests, sakura extract from Yoshino, and camellia oil from the southern islands.</p>
+                    <p>Each ingredient is selected for its proven skincare benefits and its connection to Japanese beauty traditions that have kept skin healthy and radiant for centuries.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" style="text-align: center;">
+            <div class="section-header">
+                <p class="section-subtitle">What We Believe</p>
+                <h2 class="section-title">Our Values</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Purity First</h3>
+                    <p>No synthetic fragrances, parabens, sulfates, or harsh chemicals. Ever. Just pure, natural ingredients that work.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>Authentically Japanese</h3>
+                    <p>Every product is made in Japan using traditional methods, honoring centuries of beauty wisdom.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Sustainable Beauty</h3>
+                    <p>Eco-friendly packaging, responsible sourcing, and minimal waste. Beauty shouldn't cost the earth.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Cruelty-Free</h3>
+                    <p>We never test on animals. Our products are certified cruelty-free and vegan-friendly.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         CONTACT PAGE
+         ========================================== -->
+    <div id="contact" class="page">
+        <section class="contact-hero">
+            <h1>Get in Touch</h1>
+            <p>Have questions? We'd love to hear from you. Our team is here to help.</p>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@sudsyglow.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Tokyo, Japan</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <div>
+                            <h4>Response Time</h4>
+                            <p>Within 24-48 hours</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <select>
+                                <option>General Inquiry</option>
+                                <option>Order Question</option>
+                                <option>Shipping & Returns</option>
+                                <option>Wholesale Inquiry</option>
+                                <option>Press & Media</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="section-header">
+                <p class="section-subtitle">Help Center</p>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How long does shipping take?</span>
+                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            For US orders, standard shipping takes 7-14 business days. Express shipping (3-5 days) is available at checkout. Japan domestic orders arrive within 2-4 business days. International orders may take 10-21 business days depending on location.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Are your products suitable for sensitive skin?</span>
+                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! Our products are formulated with gentle, natural ingredients and are free from harsh chemicals, sulfates, and synthetic fragrances. However, we always recommend patch testing if you have known sensitivities.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What is your return policy?</span>
+                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We offer a 30-day satisfaction guarantee. If you're not completely happy with your purchase, contact us for a full refund or exchange. Products must be at least 75% unused for returns.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you ship internationally?</span>
+                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! We ship to the US, Japan, and many countries worldwide. Shipping rates and delivery times vary by location. You can see exact shipping costs at checkout.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Are your products vegan and cruelty-free?</span>
+                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely! All SudsyGlow products are 100% cruelty-free and never tested on animals. Most of our products are vegan-friendly. Check individual product pages for specific ingredient information.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         PRODUCT DETAIL PAGE
+         ========================================== -->
+    <div id="product" class="page">
+        <section class="product-detail">
+            <div class="product-detail-grid">
+                <div class="product-gallery">
+                    <div class="product-main-image">
+                        <div class="product-bottle"></div>
+                    </div>
+                    <div class="product-thumbs">
+                        <div class="product-thumb active">
+                            <div class="product-bottle"></div>
+                        </div>
+                        <div class="product-thumb">
+                            <div class="product-bottle"></div>
+                        </div>
+                        <div class="product-thumb">
+                            <div class="product-bottle"></div>
+                        </div>
+                        <div class="product-thumb">
+                            <div class="product-bottle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-details-content">
+                    <p class="product-breadcrumb">
+                        <a onclick="showPage('home')">Home</a> / <a onclick="showPage('shop')">Shop</a> / Sakura Blossom Shampoo
+                    </p>
+                    <h1 class="product-detail-name">Sakura Blossom Shampoo</h1>
+                    <p class="product-detail-tagline">Gentle cleansing with cherry blossom & fermented rice water</p>
+                    <div class="product-rating">
+                        <span class="product-rating-stars">★★★★★</span>
+                        <span class="product-rating-count">(127 reviews)</span>
+                    </div>
+                    <p class="product-detail-price">$38.00 <small>/ 250ml</small></p>
+
+                    <div class="product-options">
+                        <div class="product-option">
+                            <span class="product-option-label">Size</span>
+                            <div class="product-option-values">
+                                <button class="option-value">100ml</button>
+                                <button class="option-value selected">250ml</button>
+                                <button class="option-value">500ml</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-quantity">
+                        <div class="quantity-selector">
+                            <button onclick="updateQty(-1)">−</button>
+                            <input type="number" value="1" min="1" id="productQty">
+                            <button onclick="updateQty(1)">+</button>
+                        </div>
+                        <button class="product-add-cart" onclick="addToCart('Sakura Blossom Shampoo', 38)">Add to Cart</button>
+                    </div>
+
+                    <div class="product-detail-desc">
+                        <h4>About This Product</h4>
+                        <p>Our bestselling Sakura Blossom Shampoo combines the delicate essence of Japanese cherry blossoms with the nourishing power of fermented rice water — a centuries-old Japanese beauty secret.</p>
+                        <p>Key benefits include strengthening and smoothing hair fibers, gentle cleansing without stripping natural oils, enhanced shine and softness, and a subtle, natural floral scent that lingers beautifully.</p>
+                    </div>
+
+                    <div class="product-accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>Ingredients</span>
+                                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    Aqua, Sodium Cocoyl Isethionate, Cocamidopropyl Betaine, Glycerin, Fermented Rice Water, Prunus Serrulata (Cherry Blossom) Extract, Camellia Japonica Seed Oil, Panthenol, Tocopherol (Vitamin E), Citric Acid, Natural Fragrance.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>How to Use</span>
+                                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    Wet hair thoroughly. Apply a small amount to palms and work into a rich lather. Massage gently into scalp and hair. Rinse well. Follow with conditioner for best results. Use 2-3 times per week or as needed.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>Shipping & Returns</span>
+                                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    Free shipping on orders over $75. Standard delivery 7-14 days (US), 2-4 days (Japan). Express options available. 30-day satisfaction guarantee — contact us if you're not completely happy with your purchase.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         CART SIDEBAR
+         ========================================== -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close" onclick="toggleCart()">
+                <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <p>Your cart is empty</p>
+                <button class="btn btn-secondary" onclick="toggleCart(); showPage('shop');">Browse Products</button>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <p class="cart-shipping">Shipping calculated at checkout</p>
+            <button class="cart-checkout">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">SUDSY<span>GLOW</span></div>
+                <p>Handcrafted Japanese artisan soaps and shampoos. Natural ingredients, traditional methods, authentic craftsmanship.</p>
+                <div class="footer-social">
+                    <a href="#">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#">
+                        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Shop</h4>
+                <a onclick="showPage('shop')">All Products</a>
+                <a onclick="showPage('shop')">Shampoos</a>
+                <a onclick="showPage('shop')">Body Bars</a>
+                <a onclick="showPage('shop')">Gift Sets</a>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a onclick="showPage('about')">Our Story</a>
+                <a onclick="showPage('about')">Ingredients</a>
+                <a onclick="showPage('contact')">Contact</a>
+                <a href="#">Press</a>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <a onclick="showPage('contact')">FAQ</a>
+                <a href="#">Shipping Info</a>
+                <a href="#">Returns</a>
+                <a href="#">Track Order</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 SudsyGlow. All rights reserved. Handcrafted in Tokyo, Japan.</p>
+            <div class="footer-payments">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
