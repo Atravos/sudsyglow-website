@@ -361,6 +361,15 @@ nav a:hover {
     inset: 20px;
     border: 1px solid rgba(139, 155, 126, 0.2);
     border-radius: 180px 180px 80px 80px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-image-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .product-preview {
@@ -563,6 +572,18 @@ nav a:hover {
     overflow: hidden;
 }
 
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
 .product-tag {
     position: absolute;
     top: 1rem;
@@ -713,6 +734,18 @@ nav a:hover {
     grid-column: span 2;
     height: 280px;
     background: linear-gradient(135deg, var(--blush) 0%, var(--cream) 100%);
+}
+
+/* Story image styling for actual images */
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.story-image:hover img {
+    transform: scale(1.03);
 }
 
 .story-image-placeholder {
@@ -1236,6 +1269,19 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+/* About image styling for actual images */
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.03);
 }
 
 .about-content h2 {
@@ -1755,6 +1801,14 @@ footer {
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.product-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .product-main-image .product-bottle {
@@ -1778,11 +1832,18 @@ footer {
     cursor: pointer;
     border: 2px solid transparent;
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .product-thumb.active,
 .product-thumb:hover {
     border-color: var(--sage);
+}
+
+.product-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-thumb .product-bottle {
