@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SudsyGlow | 東京発・職人が手作りする自然派石鹸＆シャンプー</title>
+    <meta name="description" content="東京の工房で職人が一つひとつ手作りするプレミアム石鹸とシャンプー。厳選された天然素材と伝統製法で、日本の美を世界へ。">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon-pink.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Karla:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Japanese font override */
+        body, .btn, .filter-tab, .newsletter-form input, .newsletter-form button,
+        .form-group input, .form-group textarea, .form-group select,
+        .cart-checkout, .product-add-cart, .quantity-selector input,
+        .footer-column h4, .cart-item-remove, .qty-btn {
+            font-family: 'Noto Sans JP', 'Karla', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo" onclick="showPage('home')">SUDSY<span>GLOW</span></div>
+            <nav>
+                <a onclick="showPage('home')">ホーム</a>
+                <a onclick="showPage('shop')">商品一覧</a>
+                <a onclick="showPage('about')">私たちについて</a>
+                <a onclick="showPage('contact')">お問い合わせ</a>
+            </nav>
+            <div class="header-icons">
+                <a href="../index.html" class="lang-toggle" title="English">EN</a>
+                <div class="header-icon" onclick="toggleCart()">
+                    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         ホームページ
+         ========================================== -->
+    <div id="home" class="page active">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <svg class="hero-pattern" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                <circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+            </svg>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        東京の工房で手作り
+                    </div>
+                    <h1>職人の石鹸と<br><em>自然の美しさ</em></h1>
+                    <p class="hero-text">日本の職人技の真髄をお届けします。一つひとつ伝統製法で手作りし、厳選された天然素材のみを使用。何世紀にもわたる美の知恵を、あなたの毎日に。</p>
+                    <div class="hero-btns">
+                        <a class="btn btn-primary" onclick="showPage('shop')">
+                            商品を見る
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a class="btn btn-secondary" onclick="showPage('about')">私たちについて</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-main">
+                        <img src="../images/hero-product.png" alt="SudsyGlow プレミアムシャンプーボトルと桜の花びら">
+                    </div>
+                    <div class="hero-floating hero-floating-1">
+                        <div class="floating-content">
+                            <div class="floating-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="floating-text">
+                                <strong>100%天然成分</strong>
+                                <span>純粋な素材のみ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-floating hero-floating-2">
+                        <div class="floating-content">
+                            <div class="floating-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            </div>
+                            <div class="floating-text">
+                                <strong>72時間熟成</strong>
+                                <span>伝統製法</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <section class="trust-bar">
+            <div class="trust-container">
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <span>7,500円以上で送料無料</span>
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span>全て天然成分</span>
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+                    <span>動物実験なし・ヴィーガン対応</span>
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>日本製</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured">
+            <div class="section-header">
+                <p class="section-subtitle">厳選コレクション</p>
+                <h2 class="section-title">人気商品</h2>
+                <p class="section-desc">日本の伝統製法で丁寧に作られた、愛され続ける人気商品をご紹介します。</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <span class="product-tag">人気No.1</span>
+                        <img src="../images/sakura-blossom.png" alt="桜ブロッサムシャンプー">
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('桜ブロッサムシャンプー', 4200)">カートに追加</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">シャンプー</p>
+                        <h3 class="product-name">桜ブロッサム</h3>
+                        <p class="product-desc">桜エキス＆米ぬか水配合</p>
+                        <p class="product-price">¥4,200</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <img src="../images/hinoki-forest.png" alt="檜フォレスト石鹸">
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('檜フォレスト石鹸', 2600)">カートに追加</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">ボディソープ</p>
+                        <h3 class="product-name">檜フォレスト</h3>
+                        <p class="product-desc">檜オイル＆緑茶配合</p>
+                        <p class="product-price">¥2,600</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <span class="product-tag">新商品</span>
+                        <img src="../images/yuzu-citrus.png" alt="柚子シトラスシャンプー">
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('柚子シトラスシャンプー', 4600)">カートに追加</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">シャンプー</p>
+                        <h3 class="product-name">柚子シトラス</h3>
+                        <p class="product-desc">柚子エキス＆ビタミンE配合</p>
+                        <p class="product-price">¥4,600</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <img src="../images/matcha-purify.png" alt="抹茶ピュリファイ石鹸">
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('抹茶ピュリファイ石鹸', 2800)">カートに追加</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">ボディソープ</p>
+                        <h3 class="product-name">抹茶ピュリファイ</h3>
+                        <p class="product-desc">宇治抹茶＆炭配合</p>
+                        <p class="product-price">¥2,800</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="story">
+            <div class="story-container">
+                <div class="story-images">
+                    <div class="story-image">
+                        <img src="../images/workshop.png" alt="東京の石鹸工房で熟成中の手作り石鹸">
+                    </div>
+                    <div class="story-image">
+                        <img src="../images/ingredients.png" alt="桜、抹茶、柚子、炭などの日本の天然素材">
+                    </div>
+                    <div class="story-image">
+                        <img src="../images/handcrafting.png" alt="職人が伝統的な木型に石鹸を流し込む様子">
+                    </div>
+                </div>
+                <div class="story-content">
+                    <h2><em>日本の</em>伝統に根ざして</h2>
+                    <p class="story-text">東京の工房で、私たちは何世紀にも渡る石鹸作りの伝統と現代のスキンケア科学を融合させています。すべての石鹸とボトルは、純粋さ、品質、そして日本の職人技へのこだわりを表現しています。</p>
+                    <p class="story-text">宇治の抹茶から北海道のラベンダーまで、日本各地から最高品質の素材を厳選。本物の日本の美をお届けします。</p>
+                    <div class="story-features">
+                        <div class="story-feature">
+                            <div class="story-feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
+                            <div>
+                                <h4>少量生産</h4>
+                                <p>限定数量で丁寧に製造</p>
+                            </div>
+                        </div>
+                        <div class="story-feature">
+                            <div class="story-feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div>
+                                <h4>純粋処方</h4>
+                                <p>合成添加物不使用</p>
+                            </div>
+                        </div>
+                        <div class="story-feature">
+                            <div class="story-feature-icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+                            </div>
+                            <div>
+                                <h4>環境に優しい</h4>
+                                <p>サステナブルな包装</p>
+                            </div>
+                        </div>
+                        <div class="story-feature">
+                            <div class="story-feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </div>
+                            <div>
+                                <h4>動物実験なし</h4>
+                                <p>クルエルティフリー</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-secondary" onclick="showPage('about')">詳しく見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ingredients Banner -->
+        <section class="ingredients-banner">
+            <div class="ingredients-content">
+                <h2>自然が育んだ最高の素材</h2>
+                <p>すべての製品に、肌に優しいことで知られる厳選された日本の植物成分を配合しています。</p>
+                <div class="ingredient-tags">
+                    <span class="ingredient-tag">桜エキス</span>
+                    <span class="ingredient-tag">檜オイル</span>
+                    <span class="ingredient-tag">宇治抹茶</span>
+                    <span class="ingredient-tag">柚子</span>
+                    <span class="ingredient-tag">米ぬか</span>
+                    <span class="ingredient-tag">椿油</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="section-header">
+                <p class="section-subtitle">お客様の声</p>
+                <h2 class="section-title">レビュー</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">桜ブロッサムシャンプーで髪が生まれ変わりました。柔らかく、ツヤツヤになり、香りも本当に素敵です。価格以上の価値があります！</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <p class="testimonial-name">田中 美咲</p>
+                            <p class="testimonial-location">東京都</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">敏感肌でも使える石鹸をやっと見つけました。檜の石鹸は優しく洗えて、森林の香りがとても癒されます。</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <p class="testimonial-name">佐藤 健一</p>
+                            <p class="testimonial-location">京都府</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">母へのギフトセットを注文しましたが、すっかり気に入ってくれました。パッケージも美しく、品質も最高。リピート確定です！</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <p class="testimonial-name">山本 愛子</p>
+                            <p class="testimonial-location">大阪府</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="newsletter-container">
+                <h2>SudsyGlowファミリーに参加</h2>
+                <p>限定オファー、新商品情報、日本の美容の知恵をメールでお届けします。</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="メールアドレスを入力" required>
+                    <button type="submit">登録する</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         商品一覧ページ
+         ========================================== -->
+    <div id="shop" class="page">
+        <section class="shop-hero">
+            <h1>商品一覧</h1>
+            <p>手作りの日本製石鹸とシャンプーのコレクションをご覧ください。</p>
+        </section>
+        <section class="shop-filters">
+            <div class="filters-container">
+                <div class="filter-tabs">
+                    <button class="filter-tab active">すべて</button>
+                    <button class="filter-tab">シャンプー</button>
+                    <button class="filter-tab">ボディソープ</button>
+                    <button class="filter-tab">ギフトセット</button>
+                </div>
+                <div class="filter-sort">
+                    <select>
+                        <option>並び替え: おすすめ順</option>
+                        <option>価格: 安い順</option>
+                        <option>価格: 高い順</option>
+                        <option>新着順</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <section class="shop-products">
+            <div class="products-grid">
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <span class="product-tag">人気No.1</span>
+                        <img src="../images/sakura-blossom.png" alt="桜ブロッサムシャンプー">
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('桜ブロッサムシャンプー', 4200)">カートに追加</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">シャンプー</p>
+                        <h3 class="product-name">桜ブロッサム</h3>
+                        <p class="product-desc">桜エキス＆米ぬか水配合</p>
+                        <p class="product-price">¥4,200</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <img src="../images/hinoki-forest.png" alt="檜フォレスト石鹸">
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('檜フォレスト石鹸', 2600)">カートに追加</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">ボディソープ</p>
+                        <h3 class="product-name">檜フォレスト</h3>
+                        <p class="product-desc">檜オイル＆緑茶配合</p>
+                        <p class="product-price">¥2,600</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <span class="product-tag">新商品</span>
+                        <img src="../images/yuzu-citrus.png" alt="柚子シトラスシャンプー">
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('柚子シトラスシャンプー', 4600)">カートに追加</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">シャンプー</p>
+                        <h3 class="product-name">柚子シトラス</h3>
+                        <p class="product-desc">柚子エキス＆ビタミンE配合</p>
+                        <p class="product-price">¥4,600</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <img src="../images/matcha-purify.png" alt="抹茶ピュリファイ石鹸">
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('抹茶ピュリファイ石鹸', 2800)">カートに追加</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">ボディソープ</p>
+                        <h3 class="product-name">抹茶ピュリファイ</h3>
+                        <p class="product-desc">宇治抹茶＆炭配合</p>
+                        <p class="product-price">¥2,800</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <img src="../images/rice-water.png" alt="米ぬかリペアシャンプー">
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('米ぬかリペアシャンプー', 4400)">カートに追加</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">シャンプー</p>
+                        <h3 class="product-name">米ぬかリペア</h3>
+                        <p class="product-desc">発酵米ぬか＆アミノ酸配合</p>
+                        <p class="product-price">¥4,400</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <img src="../images/bamboo-charcoal.png" alt="竹炭デトックス石鹸">
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('竹炭デトックス石鹸', 3000)">カートに追加</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">ボディソープ</p>
+                        <h3 class="product-name">竹炭デトックス</h3>
+                        <p class="product-desc">活性炭＆ティーツリー配合</p>
+                        <p class="product-price">¥3,000</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <img src="../images/camellia-silk.png" alt="椿シルクシャンプー">
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('椿シルクシャンプー', 4800)">カートに追加</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">シャンプー</p>
+                        <h3 class="product-name">椿シルク</h3>
+                        <p class="product-desc">椿油＆シルクプロテイン配合</p>
+                        <p class="product-price">¥4,800</p>
+                    </div>
+                </div>
+                <div class="product-card" onclick="showPage('product')">
+                    <div class="product-image">
+                        <span class="product-tag">ギフトセット</span>
+                        <img src="../images/onsen-gift-set.png" alt="温泉ミネラルギフトセット">
+                        <button class="product-quick-add" onclick="event.stopPropagation(); addToCart('温泉ミネラルギフトセット', 9200)">カートに追加</button>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">ギフトセット</p>
+                        <h3 class="product-name">温泉ミネラルコレクション</h3>
+                        <p class="product-desc">温泉成分配合の3点セット</p>
+                        <p class="product-price">¥9,200</p>
+                    </div>
+                </div>
+            </div>
+            <div class="load-more">
+                <button class="btn btn-secondary">もっと見る</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         私たちについてページ
+         ========================================== -->
+    <div id="about" class="page">
+        <section class="about-hero">
+            <div class="about-hero-content">
+                <h1>私たちの<em>物語</em></h1>
+                <p>日本の美容の伝統への情熱と天然素材へのこだわりから生まれたSudsyGlow。職人の石鹸作りの技を世界へお届けします。</p>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="../images/workshop.png" alt="東京の石鹸工房">
+                </div>
+                <div class="about-content">
+                    <h2>想いを込めて</h2>
+                    <p>東京の中心で、私たちの小さな職人チームが一つひとつ手作りで製品を作っています。代々受け継がれてきた技法を用いて、最高のスキンケアは自然から生まれ、心を込めて作られるものだと信じています。</p>
+                    <p>私たちの旅は、シンプルな疑問から始まりました。なぜ市販の石鹸は肌の自然な油分を奪ってしまうのか？その答えが、優しく洗いながら深く潤す日本の伝統的な石鹸作りへと導いてくれました。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-grid reverse">
+                <div class="about-image">
+                    <img src="../images/ingredients.png" alt="日本の天然素材">
+                </div>
+                <div class="about-content">
+                    <h2>日本の素材</h2>
+                    <p>京都の宇治抹茶、古代の森から採れる檜オイル、吉野の桜エキス、南の島々の椿油など、日本各地から最高品質の素材を厳選しています。</p>
+                    <p>すべての素材は、その優れたスキンケア効果と、何世紀にもわたり健やかで輝く肌を守ってきた日本の美容の伝統とのつながりから選ばれています。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" style="text-align: center;">
+            <div class="section-header">
+                <p class="section-subtitle">私たちの信念</p>
+                <h2 class="section-title">大切にしていること</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>純粋さを第一に</h3>
+                    <p>合成香料、パラベン、硫酸塩、刺激の強い化学物質は一切使用しません。純粋で効果のある天然素材のみを使用しています。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>本物の日本製</h3>
+                    <p>すべての製品は日本で伝統的な製法を用いて作られており、何世紀もの美の知恵を受け継いでいます。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3>サステナブルな美</h3>
+                    <p>環境に優しいパッケージ、責任ある調達、廃棄物の最小化。美しさは地球を犠牲にしてはいけません。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>動物実験なし</h3>
+                    <p>私たちは動物実験を一切行いません。すべての製品はクルエルティフリーで、ヴィーガン対応です。</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         お問い合わせページ
+         ========================================== -->
+    <div id="contact" class="page">
+        <section class="contact-hero">
+            <h1>お問い合わせ</h1>
+            <p>ご質問がございましたら、お気軽にご連絡ください。スタッフがお手伝いいたします。</p>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>連絡先</h3>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <h4>メール</h4>
+                            <p>hello@sudsyglow.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <h4>所在地</h4>
+                            <p>東京都</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <div>
+                            <h4>返信時間</h4>
+                            <p>24〜48時間以内</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>メッセージを送る</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>お名前（姓）</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>お名前（名）</label>
+                                <input type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>メールアドレス</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>お問い合わせ内容</label>
+                            <select>
+                                <option>一般的なお問い合わせ</option>
+                                <option>ご注文について</option>
+                                <option>配送・返品について</option>
+                                <option>卸売りについて</option>
+                                <option>メディア・取材について</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>メッセージ</label>
+                            <textarea placeholder="お問い合わせ内容をご記入ください"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">送信する</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="section-header">
+                <p class="section-subtitle">ヘルプセンター</p>
+                <h2 class="section-title">よくあるご質問</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>配送にはどのくらいかかりますか？</span>
+                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            国内配送は2〜4営業日でお届けします。海外（米国など）への配送は7〜14営業日かかります。お急ぎ便（3〜5日）もご利用いただけます。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>敏感肌でも使えますか？</span>
+                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            はい！私たちの製品は優しい天然成分で処方されており、刺激の強い化学物質、硫酸塩、合成香料は含まれていません。ただし、既知のアレルギーがある場合は、パッチテストをお勧めします。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>返品ポリシーを教えてください。</span>
+                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            30日間の満足保証を提供しています。ご購入にご満足いただけない場合は、全額返金または交換いたします。返品には75%以上未使用であることが条件となります。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>海外発送はできますか？</span>
+                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            はい！日本国内はもちろん、米国をはじめ世界各国への発送が可能です。配送料とお届け日数は地域により異なります。詳細はチェックアウト時にご確認いただけます。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>製品はヴィーガン対応ですか？</span>
+                        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            はい！SudsyGlowのすべての製品は100%クルエルティフリーで、動物実験は一切行っていません。ほとんどの製品がヴィーガン対応です。詳細は各商品ページでご確認ください。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         商品詳細ページ
+         ========================================== -->
+    <div id="product" class="page">
+        <section class="product-detail">
+            <div class="product-detail-grid">
+                <div class="product-gallery">
+                    <div class="product-main-image">
+                        <img src="../images/sakura-blossom.png" alt="桜ブロッサムシャンプー">
+                    </div>
+                    <div class="product-thumbs">
+                        <div class="product-thumb active">
+                            <img src="../images/sakura-blossom.png" alt="桜ブロッサムシャンプー">
+                        </div>
+                        <div class="product-thumb">
+                            <div class="product-bottle"></div>
+                        </div>
+                        <div class="product-thumb">
+                            <div class="product-bottle"></div>
+                        </div>
+                        <div class="product-thumb">
+                            <div class="product-bottle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-details-content">
+                    <p class="product-breadcrumb">
+                        <a onclick="showPage('home')">ホーム</a> / <a onclick="showPage('shop')">商品一覧</a> / 桜ブロッサムシャンプー
+                    </p>
+                    <h1 class="product-detail-name">桜ブロッサムシャンプー</h1>
+                    <p class="product-detail-tagline">桜エキスと発酵米ぬか水で優しく洗う</p>
+                    <div class="product-rating">
+                        <span class="product-rating-stars">★★★★★</span>
+                        <span class="product-rating-count">(127件のレビュー)</span>
+                    </div>
+                    <p class="product-detail-price">¥4,200 <small>/ 250ml</small></p>
+
+                    <div class="product-options">
+                        <div class="product-option">
+                            <span class="product-option-label">サイズ</span>
+                            <div class="product-option-values">
+                                <button class="option-value">100ml</button>
+                                <button class="option-value selected">250ml</button>
+                                <button class="option-value">500ml</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-quantity">
+                        <div class="quantity-selector">
+                            <button onclick="updateQty(-1)">−</button>
+                            <input type="number" value="1" min="1" id="productQty">
+                            <button onclick="updateQty(1)">+</button>
+                        </div>
+                        <button class="product-add-cart" onclick="addToCart('桜ブロッサムシャンプー', 4200)">カートに追加</button>
+                    </div>
+
+                    <div class="product-detail-desc">
+                        <h4>商品について</h4>
+                        <p>人気No.1の桜ブロッサムシャンプーは、日本の桜の繊細なエッセンスと、何世紀にもわたる日本の美容の秘密である発酵米ぬか水の滋養力を組み合わせました。</p>
+                        <p>髪繊維の強化と滑らかさ、自然な油分を奪わない優しい洗浄、輝きと柔らかさの向上、ほのかに香る自然なフローラルの香りが特徴です。</p>
+                    </div>
+
+                    <div class="product-accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>成分</span>
+                                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    水、ココイルイセチオン酸Na、コカミドプロピルベタイン、グリセリン、発酵米ぬか水、桜エキス、椿油、パンテノール、トコフェロール（ビタミンE）、クエン酸、天然香料
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>使用方法</span>
+                                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    髪を十分に濡らします。適量を手に取り、よく泡立てます。頭皮と髪に優しくマッサージしながら洗います。よくすすいでください。コンディショナーとの併用がおすすめです。週2〜3回、または必要に応じてご使用ください。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <span>配送・返品</span>
+                                <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    7,500円以上で送料無料。国内配送2〜4日、海外配送7〜14日。お急ぎ便もご利用いただけます。30日間の満足保証 — ご満足いただけない場合はお気軽にご連絡ください。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         カートサイドバー
+         ========================================== -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>カート</h3>
+            <button class="cart-close" onclick="toggleCart()">
+                <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                <p>カートは空です</p>
+                <button class="btn btn-secondary" onclick="toggleCart(); showPage('shop');">商品を見る</button>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-subtotal">
+                <span>小計</span>
+                <span id="cartTotal">¥0</span>
+            </div>
+            <p class="cart-shipping">送料はチェックアウト時に計算されます</p>
+            <button class="cart-checkout">購入手続きへ</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         フッター
+         ========================================== -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">SUDSY<span>GLOW</span></div>
+                <p>東京で手作りされる職人の石鹸とシャンプー。天然素材、伝統製法、本物の職人技。</p>
+                <div class="footer-social">
+                    <a href="#">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#">
+                        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#">
+                        <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>商品</h4>
+                <a onclick="showPage('shop')">商品一覧</a>
+                <a onclick="showPage('shop')">シャンプー</a>
+                <a onclick="showPage('shop')">ボディソープ</a>
+                <a onclick="showPage('shop')">ギフトセット</a>
+            </div>
+            <div class="footer-column">
+                <h4>会社情報</h4>
+                <a onclick="showPage('about')">私たちについて</a>
+                <a onclick="showPage('about')">成分について</a>
+                <a onclick="showPage('contact')">お問い合わせ</a>
+                <a href="#">メディア</a>
+            </div>
+            <div class="footer-column">
+                <h4>サポート</h4>
+                <a onclick="showPage('contact')">よくあるご質問</a>
+                <a href="#">配送について</a>
+                <a href="#">返品について</a>
+                <a href="#">注文追跡</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 SudsyGlow. All rights reserved. 東京で心を込めて手作り。</p>
+            <div class="footer-payments">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Override cart display for Japanese yen formatting
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cartItems');
+            const cartFooter = document.getElementById('cartFooter');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="cart-empty">
+                        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                        <p>カートは空です</p>
+                        <button class="btn btn-secondary" onclick="toggleCart(); showPage('shop');">商品を見る</button>
+                    </div>
+                `;
+                cartFooter.style.display = 'none';
+            } else {
+                let html = '';
+                let total = 0;
+                cart.forEach((item, index) => {
+                    total += item.price * item.qty;
+                    html += `
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <div class="cart-item-bottle"></div>
+                            </div>
+                            <div class="cart-item-details">
+                                <h4 class="cart-item-name">${item.name}</h4>
+                                <p class="cart-item-variant">250ml</p>
+                                <div class="cart-item-qty">
+                                    <button class="qty-btn" onclick="updateCartItem(${index}, -1)">−</button>
+                                    <span>${item.qty}</span>
+                                    <button class="qty-btn" onclick="updateCartItem(${index}, 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="cart-item-price">
+                                <p class="cart-item-total">¥${(item.price * item.qty).toLocaleString()}</p>
+                                <button class="cart-item-remove" onclick="removeCartItem(${index})">削除</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                cartItems.innerHTML = html;
+                document.getElementById('cartTotal').textContent = '¥' + total.toLocaleString();
+                cartFooter.style.display = 'block';
+            }
+            updateCartCount();
+        }
+    </script>
+</body>
+</html>

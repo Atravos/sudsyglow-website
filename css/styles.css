@@ -144,6 +144,23 @@ nav a:hover {
     align-items: center;
 }
 
+.lang-toggle {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    text-decoration: none;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid var(--sage);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.lang-toggle:hover {
+    background: var(--sage);
+    color: var(--white);
+}
+
 .header-icon {
     cursor: pointer;
     transition: all 0.3s ease;
